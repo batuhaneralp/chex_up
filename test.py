@@ -10,6 +10,7 @@ from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 import argparse
 
+
 ap = argparse.ArgumentParser()
 
 ap.add_argument("input_path")
@@ -74,13 +75,13 @@ test_X, test_Y = next(flow_from_dataframe(core_idg,
                                           batch_size=1024))  # one big batch
 
 # load json and create model
-json_file = open('data/300_300_B2_0.4_0.4_model.json', 'r')
+json_file = open('src/data/300_300_B2_0.4_0.4_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
 # load weights into new model
-loaded_model.load_weights("data/300_300_B2_0.4_0.4_weights.best.hdf5")
+loaded_model.load_weights("src/data/300_300_B2_0.4_0.4_weights.best.hdf5")
 print("Loaded model from disk")
 
 
