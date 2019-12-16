@@ -1,7 +1,7 @@
 # MLP for Pima Indians Dataset Serialize to JSON and HDF5
-from keras.models import model_from_json
+from tensorflow.keras.models import model_from_json
 from keras_efficientnets import custom_objects
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import os
 import numpy as np
